@@ -1,16 +1,169 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <project version="4">
   <component name="ChangeListManager">
-    <list default="true" id="cfce0ff3-8cba-4af1-861c-61d350cf3212" name="Changes" comment="" />
+    <list default="true" id="cfce0ff3-8cba-4af1-861c-61d350cf3212" name="Changes" comment="">
+      <change afterPath="$PROJECT_DIR$/.idea/.idea.Pizza-Delivery/.idea/projectSettingsUpdater.xml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/.idea/.idea.Pizza-Delivery/.idea/vcs.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/.idea.Pizza-Delivery/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/.idea.Pizza-Delivery/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Scenes/SampleScene.unity" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Scenes/SampleScene.unity.meta" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/bicycle.meta" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/bicycle/Materials.meta" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/bicycle/Materials/Textures.meta" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/bicycle/Materials/Textures/skidMark.tga" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/bicycle/Materials/Textures/skidMark.tga.meta" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/bicycle/Materials/Textures/testGreyChecker.jpg" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/bicycle/Materials/Textures/testGreyChecker.jpg.meta" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/bicycle/Materials/charMaterial.mat" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/bicycle/Materials/charMaterial.mat.meta" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/bicycle/Materials/mat_metal_black_matty.mat" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/bicycle/Materials/mat_metal_black_matty.mat.meta" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/bicycle/Materials/mat_metal_steel.mat" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/bicycle/Materials/mat_metal_steel.mat.meta" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/bicycle/Materials/mat_rubber.mat" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/bicycle/Materials/mat_rubber.mat.meta" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/bicycle/Materials/mat_steel.mat" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/bicycle/Materials/mat_steel.mat.meta" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/bicycle/Materials/met_metal_yellow.mat" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/bicycle/Materials/met_metal_yellow.mat.meta" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/bicycle/Materials/skidMaterial.mat" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/bicycle/Materials/skidMaterial.mat.meta" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/bicycle/Mobile.meta" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/bicycle/Mobile/BPK_bicycle_mobile.unity" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/bicycle/Mobile/BPK_bicycle_mobile.unity.meta" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/bicycle/Mobile/BPK_bicycle_mobileSettings.lighting" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/bicycle/Mobile/BPK_bicycle_mobileSettings.lighting.meta" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/bicycle/Mobile/Materials.meta" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/bicycle/Mobile/Materials/Textures.meta" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/bicycle/Mobile/Materials/Textures/black_tex.tga" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/bicycle/Mobile/Materials/Textures/black_tex.tga.meta" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/bicycle/Mobile/Materials/Textures/button_B.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/bicycle/Mobile/Materials/Textures/button_B.png.meta" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/bicycle/Mobile/Materials/Textures/button_R.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/bicycle/Mobile/Materials/Textures/button_R.png.meta" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/bicycle/Mobile/Materials/Textures/button_fR.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/bicycle/Mobile/Materials/Textures/button_fR.png.meta" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/bicycle/Mobile/Materials/Textures/button_rev.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/bicycle/Mobile/Materials/Textures/button_rev.png.meta" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/bicycle/Mobile/Materials/Textures/char_tex.tga" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/bicycle/Mobile/Materials/Textures/char_tex.tga.meta" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/bicycle/Mobile/Materials/Textures/joystickBack.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/bicycle/Mobile/Materials/Textures/joystickBack.png.meta" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/bicycle/Mobile/Materials/Textures/road_tex.tga" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/bicycle/Mobile/Materials/Textures/road_tex.tga.meta" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/bicycle/Mobile/Materials/Textures/rubber_tex.tga" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/bicycle/Mobile/Materials/Textures/rubber_tex.tga.meta" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/bicycle/Mobile/Materials/Textures/steel_tex.tga" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/bicycle/Mobile/Materials/Textures/steel_tex.tga.meta" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/bicycle/Mobile/Materials/Textures/yellow_metal.bmp" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/bicycle/Mobile/Materials/Textures/yellow_metal.bmp.meta" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/bicycle/Mobile/Materials/charMaterial_mobile.mat" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/bicycle/Mobile/Materials/charMaterial_mobile.mat.meta" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/bicycle/Mobile/Materials/deepBlack_mobile.mat" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/bicycle/Mobile/Materials/deepBlack_mobile.mat.meta" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/bicycle/Mobile/Materials/mat_road_mobile.mat" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/bicycle/Mobile/Materials/mat_road_mobile.mat.meta" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/bicycle/Mobile/Materials/metalYellow_mobile.mat" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/bicycle/Mobile/Materials/metalYellow_mobile.mat.meta" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/bicycle/Mobile/Materials/rubber_mobile.mat" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/bicycle/Mobile/Materials/rubber_mobile.mat.meta" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/bicycle/Mobile/Materials/steel_mobile.mat" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/bicycle/Mobile/Materials/steel_mobile.mat.meta" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/bicycle/Mobile/Materials/testGreyChecker_mobile.mat" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/bicycle/Mobile/Materials/testGreyChecker_mobile.mat.meta" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/bicycle/Mobile/Scripts.meta" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/bicycle/Mobile/Scripts/mobileControls.cs" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/bicycle/Mobile/Scripts/mobileControls.cs.meta" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/bicycle/Models.meta" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/bicycle/Models/Materials.meta" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/bicycle/Models/Materials/lambert1.mat" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/bicycle/Models/Materials/lambert1.mat.meta" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/bicycle/Models/Materials/lambert2.mat" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/bicycle/Models/Materials/lambert2.mat.meta" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/bicycle/Models/Materials/metal_black_matty.mat" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/bicycle/Models/Materials/metal_black_matty.mat.meta" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/bicycle/Models/Materials/metal_steel.mat" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/bicycle/Models/Materials/metal_steel.mat.meta" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/bicycle/Models/Materials/metal_yellow.mat" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/bicycle/Models/Materials/metal_yellow.mat.meta" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/bicycle/Models/Materials/rubber.mat" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/bicycle/Models/Materials/rubber.mat.meta" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/bicycle/Models/bicycle_body.fbx" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/bicycle/Models/bicycle_body.fbx.meta" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/bicycle/Models/bicycle_front_suspension.fbx" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/bicycle/Models/bicycle_front_suspension.fbx.meta" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/bicycle/Models/bicycle_pedals.fbx" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/bicycle/Models/bicycle_pedals.fbx.meta" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/bicycle/Models/bicycle_wheel_front.fbx" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/bicycle/Models/bicycle_wheel_front.fbx.meta" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/bicycle/Models/bicycle_wheel_rear.fbx" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/bicycle/Models/bicycle_wheel_rear.fbx.meta" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/bicycle/Models/char_anim.fbx" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/bicycle/Models/char_anim.fbx.meta" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/bicycle/Models/char_mechanim.fbx" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/bicycle/Models/char_mechanim.fbx.meta" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/bicycle/Models/track_test_50m.fbx" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/bicycle/Models/track_test_50m.fbx.meta" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/bicycle/Prefabs.meta" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/bicycle/Prefabs/car.prefab" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/bicycle/Prefabs/car.prefab.meta" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/bicycle/Prefabs/char_ragDoll.prefab" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/bicycle/Prefabs/char_ragDoll.prefab.meta" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/bicycle/Prefabs/rigid_bike.prefab" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/bicycle/Prefabs/rigid_bike.prefab.meta" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/bicycle/Prefabs/skidPrefab.prefab" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/bicycle/Prefabs/skidPrefab.prefab.meta" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/bicycle/Scripts.meta" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/bicycle/Scripts/bicycle_code.cs" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/bicycle/Scripts/bicycle_code.cs.meta" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/bicycle/Scripts/bike_sound.cs" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/bicycle/Scripts/bike_sound.cs.meta" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/bicycle/Scripts/biker_logic_mecanim.cs" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/bicycle/Scripts/biker_logic_mecanim.cs.meta" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/bicycle/Scripts/camSwitcher.cs" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/bicycle/Scripts/camSwitcher.cs.meta" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/bicycle/Scripts/controlHub.cs" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/bicycle/Scripts/controlHub.cs.meta" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/bicycle/Scripts/keyboardControls.cs" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/bicycle/Scripts/keyboardControls.cs.meta" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/bicycle/Scripts/pedalControls.cs" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/bicycle/Scripts/pedalControls.cs.meta" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/bicycle/Scripts/rear_suspensionAmmo.cs" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/bicycle/Scripts/rear_suspensionAmmo.cs.meta" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/bicycle/Scripts/skidMarks.cs" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/bicycle/Scripts/skidMarks.cs.meta" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/bicycle/Scripts/skidMarksDestroy.cs" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/bicycle/Scripts/skidMarksDestroy.cs.meta" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/bicycle/Scripts/startScript.cs" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/bicycle/Scripts/startScript.cs.meta" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/bicycle/Sounds.meta" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/bicycle/Sounds/skid.wav" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/bicycle/Sounds/skid.wav.meta" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/bicycle/Stuff.meta" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/bicycle/Stuff/RiderAnimController.controller" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/bicycle/Stuff/RiderAnimController.controller.meta" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/bicycle/Stuff/rightLeg.mask" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/bicycle/Stuff/rightLeg.mask.meta" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Packages/manifest.json" beforeDir="false" afterPath="$PROJECT_DIR$/Packages/manifest.json" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Packages/packages-lock.json" beforeDir="false" afterPath="$PROJECT_DIR$/Packages/packages-lock.json" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/ProjectSettings/InputManager.asset" beforeDir="false" afterPath="$PROJECT_DIR$/ProjectSettings/InputManager.asset" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/UserSettings/EditorUserSettings.asset" beforeDir="false" afterPath="$PROJECT_DIR$/UserSettings/EditorUserSettings.asset" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/UserSettings/Layouts/CurrentMaximizeLayout.dwlt" beforeDir="false" afterPath="$PROJECT_DIR$/UserSettings/Layouts/CurrentMaximizeLayout.dwlt" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/UserSettings/Layouts/default-2022.dwlt" beforeDir="false" afterPath="$PROJECT_DIR$/UserSettings/Layouts/default-2022.dwlt" afterDir="false" />
+    </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
     <option name="HIGHLIGHT_NON_ACTIVE_CHANGELIST" value="false" />
     <option name="LAST_RESOLUTION" value="IGNORE" />
   </component>
+  <component name="HighlightingSettingsPerFile">
+    <setting file="file://$PROJECT_DIR$/Assets/CodeBase/FinishLine.cs" root0="FORCE_HIGHLIGHTING" />
+  </component>
   <component name="MarkdownSettingsMigration">
     <option name="stateVersion" value="1" />
   </component>
   <component name="ProjectId" id="2IbMT85de70nucVFjdWkQVrHQLQ" />
+  <component name="ProjectLevelVcsManager" settingsEditedManually="true" />
   <component name="ProjectViewState">
     <option name="hideEmptyMiddlePackages" value="true" />
     <option name="showLibraryContents" value="true" />
@@ -20,10 +173,41 @@
     "Discover.Launch.Via.Unity": "true",
     "RunOnceActivity.OpenProjectViewOnStart": "true",
     "RunOnceActivity.ShowReadmeOnStart": "true",
+    "SHARE_PROJECT_CONFIGURATION_FILES": "true",
     "WebServerToolWindowFactoryState": "false",
     "vue.rearranger.settings.migration": "true"
   }
 }]]></component>
+  <component name="RunManager" selected="Attach to Unity Editor.Attach to Unity Editor">
+    <configuration name="UnitTests (batch mode)" type="RunUnityExe" factoryName="Unity Executable">
+      <option name="EXE_PATH" value="F:\Programs\Unity\2022.1.23f1\Editor\Unity.exe" />
+      <option name="PROGRAM_PARAMETERS" value="-runTests -batchmode -projectPath D:\Projects\___Tasks\Pizza-Delivery\Pizza-Delivery -testResults Logs/results.xml -testPlatform EditMode -debugCodeOptimization" />
+      <option name="WORKING_DIRECTORY" value="D:\Projects\___Tasks\Pizza-Delivery\Pizza-Delivery" />
+      <option name="PASS_PARENT_ENVS" value="1" />
+      <option name="USE_EXTERNAL_CONSOLE" value="0" />
+      <method v="2" />
+    </configuration>
+    <configuration name="Attach to Unity Editor &amp; Play" type="UNITY_DEBUG_RUN_CONFIGURATION" factoryName="UNITY_ATTACH_AND_PLAY" show_console_on_std_err="false" show_console_on_std_out="false" port="50000" address="localhost">
+      <option name="allowRunningInParallel" value="false" />
+      <option name="listenPortForConnections" value="false" />
+      <option name="pid" />
+      <option name="projectPathOnTarget" />
+      <option name="selectedOptions">
+        <list />
+      </option>
+      <method v="2" />
+    </configuration>
+    <configuration name="Attach to Unity Editor" type="UNITY_DEBUG_RUN_CONFIGURATION" factoryName="Unity Debug" show_console_on_std_err="false" show_console_on_std_out="false" port="50000" address="localhost">
+      <option name="allowRunningInParallel" value="false" />
+      <option name="listenPortForConnections" value="false" />
+      <option name="pid" />
+      <option name="projectPathOnTarget" />
+      <option name="selectedOptions">
+        <list />
+      </option>
+      <method v="2" />
+    </configuration>
+  </component>
   <component name="SpellCheckerSettings" RuntimeDictionaries="0" Folders="0" CustomDictionaries="0" DefaultDictionary="application-level" UseSingleDictionary="true" transferred="true" />
   <component name="TaskManager">
     <task active="true" id="Default" summary="Default task">
@@ -33,14 +217,27 @@
       <option name="presentableId" value="Default" />
       <updated>1670445837274</updated>
       <workItem from="1670445842674" duration="1129000" />
+      <workItem from="1670499403078" duration="5729000" />
     </task>
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
     <option name="version" value="3" />
   </component>
+  <component name="UnityCheckinConfiguration" checkUnsavedScenes="true" />
   <component name="UnityProjectConfiguration" hasMinimizedUI="true" />
   <component name="UnityUnitTestConfiguration" currentTestLauncher="EditMode" />
+  <component name="Vcs.Log.Tabs.Properties">
+    <option name="TAB_STATES">
+      <map>
+        <entry key="MAIN">
+          <value>
+            <State />
+          </value>
+        </entry>
+      </map>
+    </option>
+  </component>
   <component name="VcsManagerConfiguration">
     <option name="CLEAR_INITIAL_COMMIT_MESSAGE" value="true" />
   </component>
