@@ -2,27 +2,28 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="cfce0ff3-8cba-4af1-861c-61d350cf3212" name="Changes" comment="">
-      <change afterPath="$PROJECT_DIR$/Assets/CodeBase/Input/PlayerInput.cs" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/.idea.Pizza-Delivery/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/.idea.Pizza-Delivery/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/AssetStorePackage/Pizza/Mesh/Pizza_Mesh.FBX.meta" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/AssetStorePackage/Pizza/Mesh/Pizza_Mesh.FBX.meta" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/AssetStorePackage/Pizza/Prefab/Pizza.prefab" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/AssetStorePackage/Pizza/Prefab/Pizza.prefab" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/CodeBase/FinishLine.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/CodeBase/FinishLine.cs" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/CodeBase/Input/MobileControls.cs" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/CodeBase/Input/MobileControls.cs.meta" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/CodeBase/Input/PlayerInput.cs.meta" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/CodeBase/Player/Bicycle.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/CodeBase/Player/Bicycle.cs" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/CodeBase/Core/GameMotor.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/CodeBase/Core/GameMotor.cs" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/CodeBase/Editor.meta" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/CodeBase/Editor/ConditionalHidePropertyDrawer.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Editor/ConditionalHidePropertyDrawer.cs" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/CodeBase/Editor/ConditionalHidePropertyDrawer.cs.meta" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Editor/ConditionalHidePropertyDrawer.cs.meta" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/CodeBase/Editor/HorizontalLineDecoratorDrawer.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Editor/HorizontalLineDecoratorDrawer.cs" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/CodeBase/Editor/HorizontalLineDecoratorDrawer.cs.meta" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Editor/HorizontalLineDecoratorDrawer.cs.meta" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/CodeBase/Extension/Initialization.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/CodeBase/Extension/Initialization.cs" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/CodeBase/Extension/Singleton.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/CodeBase/Extension/Singleton.cs" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/CodeBase/LevelMechanics/Enums.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/CodeBase/LevelMechanics/Enums.cs" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/CodeBase/LevelMechanics/LevelController.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/CodeBase/LevelMechanics/LevelController.cs" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/CodeBase/LevelMechanics/LevelCreator.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/CodeBase/LevelMechanics/LevelCreator.cs" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/CodeBase/LevelMechanics/LevelData.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/CodeBase/LevelMechanics/LevelData.cs" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/CodeBase/LevelMechanics/LevelManager.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/CodeBase/LevelMechanics/LevelManager.cs" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/CodeBase/LevelMechanics/LevelTheme.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/CodeBase/LevelMechanics/LevelTheme.cs" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/Assets/CodeBase/Player/CamSwitcher.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/CodeBase/Player/CamSwitcher.cs" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/CodeBase/Player/PedalControls.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/CodeBase/Player/PedalControls.cs" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/CodeBase/Player/controlHub.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/CodeBase/Player/controlHub.cs" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/Prefabs/rigid_bike.prefab" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/Prefabs/rigid_bike.prefab.meta" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/Prefabs/skidPrefab.prefab" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/Prefabs/skidPrefab.prefab.meta" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/Scenes/Main.unity" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Scenes/Main.unity" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/ProjectSettings/DynamicsManager.asset" beforeDir="false" afterPath="$PROJECT_DIR$/ProjectSettings/DynamicsManager.asset" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/ProjectSettings/EditorBuildSettings.asset" beforeDir="false" afterPath="$PROJECT_DIR$/ProjectSettings/EditorBuildSettings.asset" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/ProjectSettings/TagManager.asset" beforeDir="false" afterPath="$PROJECT_DIR$/ProjectSettings/TagManager.asset" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/UserSettings/EditorUserSettings.asset" beforeDir="false" afterPath="$PROJECT_DIR$/UserSettings/EditorUserSettings.asset" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/UserSettings/Layouts/CurrentMaximizeLayout.dwlt" beforeDir="false" afterPath="$PROJECT_DIR$/UserSettings/Layouts/CurrentMaximizeLayout.dwlt" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/CodeBase/Spline/ChunkPoint.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/CodeBase/Spline/ChunkPoint.cs" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/CodeBase/Spline/SplineBehaviour.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/CodeBase/Spline/SplineBehaviour.cs" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/CodeBase/Utility/ConditionalHideAttribute.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/CodeBase/Utility/ConditionalHideAttribute.cs" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/CodeBase/Utility/EColor.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/CodeBase/Utility/EColor.cs" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/CodeBase/Utility/ExtensionMethods.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/CodeBase/Utility/ExtensionMethods.cs" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/CodeBase/Utility/HorizontalLineAttribute.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/CodeBase/Utility/HorizontalLineAttribute.cs" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -31,8 +32,9 @@
   </component>
   <component name="HighlightingSettingsPerFile">
     <setting file="file://$APPLICATION_CONFIG_DIR$/resharper-host/DecompilerCache/decompiler/890f938f50c14f9f8c0e9be9770e5b6b3dc00/6b/9d48c0ce/IPointerUpHandler.cs" root0="SKIP_HIGHLIGHTING" />
-    <setting file="file://$APPLICATION_CONFIG_DIR$/resharper-host/DecompilerCache/decompiler/890f938f50c14f9f8c0e9be9770e5b6b3dc00/f7/b56ebf8c/IPointerDownHandler.cs" root0="SKIP_HIGHLIGHTING" />
-    <setting file="file://$PROJECT_DIR$/Assets/CodeBase/FinishLine.cs" root0="FORCE_HIGHLIGHTING" />
+    <setting file="file://$APPLICATION_CONFIG_DIR$/resharper-host/DecompilerCache/decompiler/890f938f50c14f9f8c0e9be9770e5b6b3dc00/f7/b56ebf8c/IPointerDownHandler.cs" root0="FORCE_HIGHLIGHTING" />
+    <setting file="file://$PROJECT_DIR$/Assets/CodeBase/LevelMechanics/LevelCreator.cs" root0="FORCE_HIGHLIGHTING" />
+    <setting file="file://$PROJECT_DIR$/Assets/CodeBase/UI/IngameViewController.cs" root0="FORCE_HIGHLIGHTING" />
     <setting file="file://$PROJECT_DIR$/Assets/Scripts/Factory.cs" root0="FORCE_HIGHLIGHTING" />
   </component>
   <component name="MarkdownSettingsMigration">
@@ -94,7 +96,7 @@
       <updated>1670445837274</updated>
       <workItem from="1670445842674" duration="1129000" />
       <workItem from="1670499403078" duration="5729000" />
-      <workItem from="1670531606864" duration="5128000" />
+      <workItem from="1670531606864" duration="19082000" />
     </task>
     <servers />
   </component>

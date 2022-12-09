@@ -1,18 +1,26 @@
-﻿using CodeBase.Player;
-using SimpleInputNamespace;
+﻿using SimpleInputNamespace;
 using UnityEngine;
+using UnityEngine.UI;
 
 namespace CodeBase.Input
 {
-	public class PlayerInput : MonoBehaviour {
-
+	public class PlayerInput : MonoBehaviour
+	{
 		[SerializeField] public Joystick _joystick;
-		public controlHub _controlHub;
+
+		public float Horizontal;
+		public float Vertical;
 		
+		public bool isRestartBike;
 		private void Update()
 		{
-			_controlHub.Horizontal = _joystick.xAxis.value;
-			_controlHub.Vertical = _joystick.yAxis.value;
+			Horizontal = _joystick.xAxis.value;
+			Vertical = _joystick.yAxis.value;
+		}
+
+		public void Toggle()
+		{
+			isRestartBike = true;
 		}
 	}
 }

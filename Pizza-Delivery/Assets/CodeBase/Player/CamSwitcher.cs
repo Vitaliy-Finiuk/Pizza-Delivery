@@ -1,9 +1,12 @@
-﻿using UnityEngine;
+﻿/*using CodeBase.Input;
+using UnityEngine;
 
 namespace CodeBase.Player
 {
 	public class CamSwitcher : MonoBehaviour
 	{
+		[SerializeField] private PlayerInput _playerInput;
+		
 		public Camera backCamera;
 		public Camera aroundCamera;
 		public Transform cameraTarget;
@@ -13,38 +16,37 @@ namespace CodeBase.Player
 		[SerializeField] private float _dist = 3.0f;
 		[SerializeField] private float _height = 1.0f;
 
+
 		//////////////////// for around Camera
 		private float xSpeed = 10.0f;
 		private float ySpeed = 10.0f;
 
-		private float yMinLimit = -90;
-		private float yMaxLimit = 90;
-		private float _distance = 3.0f;
+		[SerializeField] private float yMinLimit = -90;
+		[SerializeField] private float yMaxLimit = 90;
+		[SerializeField] private float _distance = 3.0f;
 
-		private float distanceMin = 2;
-		private float distanceMax = 10;
-	
+		[SerializeField] private float distanceMin = 2;
+		[SerializeField] private float distanceMax = 10;
+
 		private float x = 0.0f;
 		private float y = 0.0f;
-	
+
 		private float smoothTime = 0.2f;
-	
+
 		private float xSmooth = 0.0f;
-		private float ySmooth = 0.0f; 
+		private float ySmooth = 0.0f;
 		private float xVelocity = 0.0f;
 		private float yVelocity = 0.0f;
 
+
 		//new camera behaviour
 		private float currentTargetAngle;
-	
+
 		private GameObject ctrlHub;
-		private controlHub outsideControls;
-	
+
+
 		private void Start ()
 		{
-			ctrlHub = GameObject.Find("gameScenario");//link to GameObject with script "controlHub"
-			outsideControls = ctrlHub.GetComponent<controlHub>();//to connect c# mobile control script to this one
-
 			backCamera.enabled = true;
 			aroundCamera.enabled = false;
 			currentCamera = backCamera;
@@ -94,7 +96,7 @@ namespace CodeBase.Player
 				currentCamera = backCamera;
 			
 				//////////////////// code for back Camera
-				backCamera.fieldOfView = backCamera.fieldOfView + outsideControls.Vertical * 20f * Time.deltaTime;
+				backCamera.fieldOfView = backCamera.fieldOfView + _playerInput.Vertical * 20f * Time.deltaTime;
 				if (backCamera.fieldOfView > 85) {
 					backCamera.fieldOfView = 85;
 				}
@@ -141,4 +143,4 @@ namespace CodeBase.Player
 #endif
 		}
 	}
-}
+}*/
