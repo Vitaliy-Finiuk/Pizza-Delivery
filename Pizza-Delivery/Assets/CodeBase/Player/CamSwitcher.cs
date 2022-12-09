@@ -10,8 +10,8 @@ namespace CodeBase.Player
 		private Camera currentCamera;
 
 
-		[SerializeField] private float dist = 3.0f;
-		[SerializeField] private float height = 1.0f;
+		[SerializeField] private float _dist = 3.0f;
+		[SerializeField] private float _height = 1.0f;
 
 		//////////////////// for around Camera
 		private float xSpeed = 10.0f;
@@ -109,7 +109,7 @@ namespace CodeBase.Player
 				}
 			
 				float wantedRotationAngle = cameraTarget.eulerAngles.y;
-				float wantedHeight = cameraTarget.position.y + height;
+				float wantedHeight = cameraTarget.position.y + _height;
 				float currentRotationAngle = currentCamera.transform.eulerAngles.y;
 				float currentHeight = currentCamera.transform.position.y;
 			
@@ -118,7 +118,7 @@ namespace CodeBase.Player
 			
 				Quaternion currentRotation = Quaternion.Euler (0, currentRotationAngle, 0);
 				currentCamera.transform.position = cameraTarget.position;
-				currentCamera.transform.position -= currentRotation * Vector3.forward * dist;
+				currentCamera.transform.position -= currentRotation * Vector3.forward * _dist;
 				currentCamera.transform.position = new Vector3 (currentCamera.transform.position.x, currentHeight, currentCamera.transform.position.z);
 				currentCamera.transform.LookAt (cameraTarget);
 
@@ -134,7 +134,7 @@ namespace CodeBase.Player
 				if (cameraTarget.transform.eulerAngles.z >180){
 					currentTargetAngle = -(360-cameraTarget.transform.eulerAngles.z)/10;
 				}
-				currentCamera.transform.rotation = Quaternion.Euler (height*10, currentRotationAngle, currentTargetAngle);
+				currentCamera.transform.rotation = Quaternion.Euler (_height*10, currentRotationAngle, currentTargetAngle);
 				//to this -------------------------------------------------------------------------
 #if UNITY_STANDALONE || UNITY_WEBPLAYER// turn camera rotaion ONLY for mobile for free touch screen anywhere
 			}

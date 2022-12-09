@@ -1,6 +1,3 @@
-// Writen by Boris Chuprin smokerr@mail.ru
-
-using System.Collections;
 using UnityEngine;
 
 namespace CodeBase.Player
@@ -29,7 +26,8 @@ namespace CodeBase.Player
 
         //tmp "true" during "in stunt" 
         private bool inStunt = false;
-        void Start()
+
+        private void Start()
         {
 
             ctrlHub = GameObject.Find("gameScenario");//link to GameObject with script "controlHub"
@@ -57,45 +55,22 @@ namespace CodeBase.Player
                 CoM.transform.localPosition = tmpCoM01;
 
             }
-            else EnergyWaste();//need to move pedals some time after stop acceleration
+            else EnergyWaste();
 
         }
 
-        //function when player stop accelerating and rider still slowly rotating pedals
-        void EnergyWaste()
+        private void EnergyWaste()
         {
             if (energy > 0)
             {
                 var tmpEnergy = 10 - energy;
-                this.transform.rotation = this.transform.rotation * Quaternion.Euler((linkToBike.bikeSpeed - tmpEnergy) / 4, 0, 0);
-                pedalRight.transform.rotation = pedalRight.transform.rotation * Quaternion.Euler(-(linkToBike.bikeSpeed - tmpEnergy) / -4, 0, 0);
-                pedalLeft.transform.rotation = pedalLeft.transform.rotation * Quaternion.Euler(-(linkToBike.bikeSpeed - tmpEnergy) / 4, 0, 0);
+                this.transform.rotation *= Quaternion.Euler((linkToBike.bikeSpeed - tmpEnergy) / 4, 0, 0);
+                pedalRight.transform.rotation *= Quaternion.Euler(-(linkToBike.bikeSpeed - tmpEnergy) / -4, 0, 0);
+                pedalLeft.transform.rotation *= Quaternion.Euler(-(linkToBike.bikeSpeed - tmpEnergy) / 4, 0, 0);
                 energy = energy - 0.1f;
 
             }
         }
 
-        //trick to do not crash for one second. You need that for riding ramps
-        IEnumerator StuntHoldForOneSecond()
-        {
-            stuntIsOn = true;
-            yield return new WaitForSeconds(0.5f);//1 second seems too long :) now it's half of second 0.5ff. Make 1 for actually 1 second
-            if (!inStunt)
-            {
-                stuntIsOn = false;
-            }
-        }
-        /////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////
-        // applying physical forces to immitate stunts///////////////////////////////////////////////////////////////////////////////////////
-        /////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////
-        //void StuntBunnyHope (){
-        IEnumerator StuntBunnyHope()
-        {
-            stuntBike.GetComponent<Rigidbody>().AddForce(Vector3.up * 40000);//push bike up
-            yield return new WaitForSeconds(0.1f);//a little pause between applying force
-            stuntBike.GetComponent<Rigidbody>().AddTorque(transform.right * -14000);//pull front wheel(turn bike around CoM)
-            yield return new WaitForSeconds(0.2f);//a little pause between applying force
-            stuntBike.GetComponent<Rigidbody>().AddTorque(transform.right * 20000);//push front down and pull rear up
-        }
     }
 }

@@ -1,12 +1,10 @@
-using BansheeGz.BGSpline.Components;
 using UnityEngine;
 
 namespace CodeBase.Player
 {
+    [RequireComponent(typeof(Rigidbody))]
     public class Bicycle : MonoBehaviour
     {
-        public BGCcTrs bcgTRS;
-
         public WheelCollider coll_frontWheel;
         public WheelCollider coll_rearWheel;
         public GameObject meshFrontWheel;
@@ -70,16 +68,16 @@ namespace CodeBase.Player
         [HideInInspector]
         public float bikeSpeed; //to know bike speed km/h
         public bool isReverseOn = false; //to turn On and Off reverse speed
+
+        private Rigidbody _rigidbody;
+
         ////////////////////////////////////////////////  ON SCREEN INFO ///////////////////////////////////////////////////////
-        void Start()
+        private void Start()
         {
-            
+            _rigidbody = GetComponent<Rigidbody>();
+
             //if there is no pendulum linked to script in Editor, it means MTB have no rear suspension, so no movement of rear wheel(pendulum)
-            if (rearPendulumn)
-            {
-                rearPend = true;
-            }
-            else rearPend = false;
+            rearPend = rearPendulumn;
 
             //bicycle code
             frontWheelAPD = coll_frontWheel.forceAppPointDistance;
@@ -99,7 +97,7 @@ namespace CodeBase.Player
             meshRearWheel.GetComponent<Renderer>().material.color = Color.black;
 
             //for better physics of fast moving bodies
-            GetComponent<Rigidbody>().interpolation = RigidbodyInterpolation.Interpolate;
+            _rigidbody.interpolation = RigidbodyInterpolation.Interpolate;
 
             // too keep LegsPower variable like "real" horse powers
             LegsPower = LegsPower * 20;
@@ -272,10 +270,7 @@ namespace CodeBase.Player
 
                     //when rear brake is used it helps a little to prevent stoppie. Because in real life bike "stretch" a little when you using rear brake just moment before front.
                     float rearBrakeAddon = 0.0f;
-                    if (outsideControls.rearBrakeOn)
-                    {
-                        rearBrakeAddon = 0.0025f;
-                    }
+
                     var tmp_cs11 = CoM.localPosition;
                     tmp_cs11.y += (frontBrakePower / 200000) + tmpMassShift / 50f - rearBrakeAddon;
                     tmp_cs11.z += 0.0025f;
@@ -327,47 +322,8 @@ namespace CodeBase.Player
 
             //////////////////////////////////// rear brake /////////////////////////////////////////////////////////
             // rear brake - it's all about lose side stiffness more and more till rear brake is pressed
-            if (!crashed && outsideControls.rearBrakeOn)
-            {
-                coll_rearWheel.brakeTorque = frontBrakePower / 2;// rear brake is not so good as front brake
+            
 
-                if (this.transform.localEulerAngles.x > 180 && this.transform.localEulerAngles.x < 350)
-                {
-                    var tmp_cs14 = CoM.localPosition;
-                    tmp_cs14.z = 0.0f + tmpMassShift;
-                    CoM.localPosition = tmp_cs14;
-                }
-
-                coll_frontWheel.forceAppPointDistance = 0.25f;//for better sliding when rear brake is on
-
-                stiffPowerGain = stiffPowerGain += 0.025f - (bikeSpeed / 10000);
-                if (stiffPowerGain > 0.9f - bikeSpeed / 300) { 
-                    stiffPowerGain = 0.9f - bikeSpeed / 300;
-                }
-
-                var tmp_cs15a = CoM.localPosition;
-                tmp_cs15a.z = tmp_cs15a.z += 0.05f;
-                CoM.localPosition = tmp_cs15a;
-
-
-                if (CoM.localPosition.z >= 0.5f)
-                {
-                    var tmp_cs15b = CoM.localPosition;
-                    tmp_cs15b.z = 0.5f;
-                    CoM.localPosition = tmp_cs15b;
-
-                }
-
-                var tmp_cs15z = coll_rearWheel.sidewaysFriction;
-                tmp_cs15z.stiffness = 0.9f - stiffPowerGain;// (2 - for stability, 0.01f - falls in a moment)
-                coll_rearWheel.sidewaysFriction = tmp_cs15z;
-
-
-                meshRearWheel.GetComponent<Renderer>().material.color = Color.red;
-
-            }
-            else
-            {
 
                 coll_rearWheel.brakeTorque = 0;
 
@@ -383,7 +339,6 @@ namespace CodeBase.Player
                 tmp_cs18.stiffness = 1.0f - stiffPowerGain;
                 coll_frontWheel.sidewaysFriction = tmp_cs18;// side stiffness is back to 1
 
-            }
 
 
             //////////////////////////////////// turnning /////////////////////////////////////////////////////////////			
@@ -402,50 +357,10 @@ namespace CodeBase.Player
                 steeringWheel.rotation = coll_frontWheel.transform.rotation * Quaternion.Euler(0, coll_frontWheel.steerAngle, coll_frontWheel.transform.rotation.z);
             }
             else coll_frontWheel.steerAngle = 0;
-
-
-            /////////////////////////////////////////////////// PILOT'S MASS //////////////////////////////////////////////////////////
-            // it's part about moving of pilot's center of mass. It can be used for wheelie or stoppie control and for motocross section in future
-            //not polished yet. For mobile version it should back pilot's mass smooth not in one tick
-            if (outsideControls.VerticalMassShift > 0)
-            {
-                tmpMassShift = outsideControls.VerticalMassShift / 12.5f;//12.5f to get 0.08fm at final
-                var tmp_cs19 = CoM.localPosition;
-                tmp_cs19.z = tmpMassShift;
-                CoM.localPosition = tmp_cs19;
-
-                GetComponent<Rigidbody>().centerOfMass = new Vector3(CoM.localPosition.x, CoM.localPosition.y, CoM.localPosition.z);
-            }
-            if (outsideControls.VerticalMassShift < 0)
-            {
-                tmpMassShift = outsideControls.VerticalMassShift / 12.5f;//12.5f to get 0.08fm at final
-                var tmp_cs20 = CoM.localPosition;
-                tmp_cs20.z = tmpMassShift;
-                CoM.localPosition = tmp_cs20;
-
-                GetComponent<Rigidbody>().centerOfMass = new Vector3(CoM.localPosition.x, CoM.localPosition.y, CoM.localPosition.z);
-            }
-            if (outsideControls.HorizontalMassShift < 0)
-            {
-                var tmp_cs21 = CoM.localPosition;
-                tmp_cs21.x = outsideControls.HorizontalMassShift / 40;
-                CoM.localPosition = tmp_cs21;//40 to get 0.025m at final
-
-                GetComponent<Rigidbody>().centerOfMass = new Vector3(CoM.localPosition.x, CoM.localPosition.y, CoM.localPosition.z);
-
-            }
-            if (outsideControls.HorizontalMassShift > 0)
-            {
-                var tmp_cs22 = CoM.localPosition;
-                tmp_cs22.x = outsideControls.HorizontalMassShift / 40;
-                CoM.localPosition = tmp_cs22;//40 to get 0.025m at final
-
-                GetComponent<Rigidbody>().centerOfMass = new Vector3(CoM.localPosition.x, CoM.localPosition.y, CoM.localPosition.z);
-            }
-
+            
 
             //auto back CoM when any key not pressed
-            if (!crashed && outsideControls.Vertical == 0 && !outsideControls.rearBrakeOn && !linkToStunt.stuntIsOn || (outsideControls.Vertical < 0 && isFrontWheelInAir))
+            if (!crashed && outsideControls.Vertical == 0  && !linkToStunt.stuntIsOn || (outsideControls.Vertical < 0 && isFrontWheelInAir))
             {
                 var tmp_cs23 = CoM.localPosition;
                 tmp_cs23.y = normalCoM;
@@ -455,18 +370,14 @@ namespace CodeBase.Player
                 coll_frontWheel.brakeTorque = 0;
                 coll_rearWheel.motorTorque = 0;
                 coll_rearWheel.brakeTorque = 0;
-                GetComponent<Rigidbody>().centerOfMass = new Vector3(CoM.localPosition.x, CoM.localPosition.y, CoM.localPosition.z);
+                _rigidbody.centerOfMass = new Vector3(CoM.localPosition.x, CoM.localPosition.y, CoM.localPosition.z);
             }
 
             /////////////////////////////////////////////////////// RESTART KEY ///////////////////////////////////////////////////////////
             // Restart key - recreate bike few meters above current place
             if (outsideControls.restartBike)
             {
-                if (outsideControls.fullRestartBike)
-                {
-                    transform.position = new Vector3(0, 1, -11);
-                    transform.rotation = Quaternion.Euler(0.0f, 0.0f, 0.0f);
-                }
+
                 crashed = false;
                 transform.position += new Vector3(0, 0.1f, 0);
                 transform.rotation = Quaternion.Euler(0.0f, transform.localEulerAngles.y, 0.0f);
@@ -482,29 +393,28 @@ namespace CodeBase.Player
                 coll_frontWheel.brakeTorque = 0;
                 coll_rearWheel.motorTorque = 0;
                 coll_rearWheel.brakeTorque = 0;
-                GetComponent<Rigidbody>().centerOfMass = new Vector3(CoM.localPosition.x, CoM.localPosition.y, CoM.localPosition.z);
+                _rigidbody.centerOfMass = new Vector3(CoM.localPosition.x, CoM.localPosition.y, CoM.localPosition.z);
             }
 
+            CrashHappened();
+        }
 
-
-            ///////////////////////////////////////// CRASH happens /////////////////////////////////////////////////////////
-            // conditions when crash is happen
+        private void CrashHappened()
+        {
             if ((this.transform.localEulerAngles.z >= crashAngle01 && this.transform.localEulerAngles.z <= crashAngle02) && !linkToStunt.stuntIsOn || (this.transform.localEulerAngles.x >= crashAngle03 && this.transform.localEulerAngles.x <= crashAngle04 && !linkToStunt.stuntIsOn))
             {
-                GetComponent<Rigidbody>().drag = 0.1f; // when 250 bike can easy beat 200km/h // ~55 m/s
-                GetComponent<Rigidbody>().angularDrag = 0.01f;
+                _rigidbody.drag = 0.1f; // when 250 bike can easy beat 200km/h // ~55 m/s
+                _rigidbody.angularDrag = 0.01f;
                 crashed = true;
                 var tmp_cs27 = CoM.localPosition;
                 tmp_cs27.x = 0.0f;
                 tmp_cs27.y = CoMWhenCrahsed;//move CoM a little bit up for funny bike rotations when fall
                 tmp_cs27.z = 0.0f;
                 CoM.localPosition = tmp_cs27;
-                GetComponent<Rigidbody>().centerOfMass = new Vector3(CoM.localPosition.x, CoM.localPosition.y, CoM.localPosition.z);
+                _rigidbody.centerOfMass = new Vector3(CoM.localPosition.x, CoM.localPosition.y, CoM.localPosition.z);
             }
 
             if (crashed) coll_rearWheel.motorTorque = 0;//to prevent some bug when bike crashed but still accelerating
-            
-            
         }
 
         private void ApplyLocalPositionToVisuals(WheelCollider collider)
