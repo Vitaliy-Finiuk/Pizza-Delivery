@@ -17,9 +17,14 @@ namespace _Game.CodeBase.Input
 			Vertical = _joystick.yAxis.value;
 		}
 
-		public void Toggle()
+		public void RestartBikeDownEvent()
 		{
 			isRestartBike = true;
+		}
+		
+		public void RestartBikeDownUp()
+		{
+			isRestartBike = false;
 		}
 	}
 }
