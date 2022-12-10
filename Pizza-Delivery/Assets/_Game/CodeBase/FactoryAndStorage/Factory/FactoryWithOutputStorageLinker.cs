@@ -1,8 +1,8 @@
-using _Game.CodeBase.FactoryAndStorage.Resources;
+using _Game.CodeBase.ResourcesLogic;
 using UnityEngine;
 using UnityEngine.Events;
 
-namespace _Game.CodeBase.FactoryAndStorage.Factory
+namespace _Game.CodeBase.Factory
 {
 	public class FactoryWithOutputStorageLinker : MonoBehaviour
 	{

@@ -1,11 +1,14 @@
-using _Game.CodeBase.Input;
+using _Game.CodeBase.Infrastucture;
+using _Game.CodeBase.Services.Input;
 using UnityEngine;
 
-namespace _Game.CodeBase.Player
+namespace _Game.CodeBase.Player.BicycleLogic
 {
-    [RequireComponent(typeof(Rigidbody), typeof(PlayerInput))]
+    [RequireComponent(typeof(Rigidbody))]
     public class Bicycle : MonoBehaviour
     {
+        private IInputService _inputService;
+
         [SerializeField] private WheelCollider _collFrontWheelCollider;
         [SerializeField] private WheelCollider _collRearWheelWheelCollider;
         
@@ -62,10 +65,16 @@ namespace _Game.CodeBase.Player
         [HideInInspector] public float BikeSpeed;
 
         private Rigidbody _rigidbody;
-        public PlayerInput _playerInput;
+
 
 
         private int _springWeakness = 0;
+        public bool _isRestartBikePosition;
+
+        private void Awake()
+        {
+            _inputService = Game.InputService;
+        }
 
         private void Start()
         {
@@ -153,11 +162,11 @@ namespace _Game.CodeBase.Player
 
             Accelerate();
 
-            if (!_crashed && _playerInput.Vertical > 0.9f)
+            if (!_crashed && _inputService.Axis.y > 0.9f)
                 FullThrottle();
             else RearSuspensionRestoration();
 
-            if (!_crashed && _playerInput.Vertical < 0 && !_isFrontWheelInAir)
+            if (!_crashed && _inputService.Axis.y < 0 && !_isFrontWheelInAir)
                 FrontBrake();
             else FrontSuspensionRestoration(_springWeakness);
 
@@ -174,10 +183,10 @@ namespace _Game.CodeBase.Player
 
         private void Accelerate()
         {
-            if (!_crashed && _playerInput.Vertical > 0)
+            if (!_crashed && _inputService.Axis.y > 0)
             {
                 _collFrontWheelCollider.brakeTorque = 0;
-                _collRearWheelWheelCollider.motorTorque = _legsPower * _playerInput.Vertical;
+                _collRearWheelWheelCollider.motorTorque = _legsPower * _inputService.Axis.y;
 
                 var tmp_cs5 = CenterObjectMass.localPosition;
                 tmp_cs5.z = 0.0f + TMPMassShift;
@@ -195,9 +204,9 @@ namespace _Game.CodeBase.Player
         {
             _tempMaxWheelAngle = wheelbarRestrictCurve.Evaluate(BikeSpeed);
 
-            if (!_crashed && _playerInput.Horizontal != 0)
+            if (!_crashed && _inputService.Axis.x != 0)
             {
-                _collFrontWheelCollider.steerAngle = _tempMaxWheelAngle * _playerInput.Horizontal;
+                _collFrontWheelCollider.steerAngle = _tempMaxWheelAngle * _inputService.Axis.x;
                 _steeringWheel.rotation = _collFrontWheelCollider.transform.rotation * Quaternion.Euler(0,
                     _collFrontWheelCollider.steerAngle, _collFrontWheelCollider.transform.rotation.z);
             }
@@ -206,8 +215,8 @@ namespace _Game.CodeBase.Player
 
         private void AutomaticWheelReturn()
         {
-            if (!_crashed && _playerInput.Vertical == 0 && !_linkToStunt.stuntIsOn ||
-                (_playerInput.Vertical < 0 && _isFrontWheelInAir))
+            if (!_crashed && _inputService.Axis.y == 0 && !_linkToStunt.stuntIsOn ||
+                (_inputService.Axis.y < 0 && _isFrontWheelInAir))
             {
                 var tmp_cs23 = CenterObjectMass.localPosition;
 
@@ -270,7 +279,7 @@ namespace _Game.CodeBase.Player
 
         private void FrontBrake()
         {
-            _collFrontWheelCollider.brakeTorque = _frontBrakePower * -_playerInput.Vertical;
+            _collFrontWheelCollider.brakeTorque = _frontBrakePower * -_inputService.Axis.y;
             _collRearWheelWheelCollider.motorTorque = 0;
 
             if (BikeSpeed > 1)
@@ -333,9 +342,30 @@ namespace _Game.CodeBase.Player
             _collFrontWheelCollider.sidewaysFriction = tmp_cs18;
         }
 
-        private void RestartBikePosition()
+        private void CrashHappened()
         {
-            if (_playerInput.isRestartBike)
+            if ((this.transform.localEulerAngles.z >= _crashAngleSideFall01 &&
+                 this.transform.localEulerAngles.z <= _crashAngleSideFall02) && !_linkToStunt.stuntIsOn ||
+                (this.transform.localEulerAngles.x >= _crashAngleFrontFall &&
+                 this.transform.localEulerAngles.x <= _crashAngleBackFall && !_linkToStunt.stuntIsOn))
+            {
+                _rigidbody.drag = 0.1f;
+                _rigidbody.angularDrag = 0.01f;
+                _crashed = true;
+                var tmp_cs27 = CenterObjectMass.localPosition;
+                tmp_cs27.x = 0.0f;
+                tmp_cs27.y = _coMWhenCrahsed;
+                tmp_cs27.z = 0.0f;
+                CenterObjectMass.localPosition = tmp_cs27;
+                _rigidbody.centerOfMass = new Vector3(CenterObjectMass.localPosition.x, CenterObjectMass.localPosition.y, CenterObjectMass.localPosition.z);
+            }
+
+            if (_crashed) _collRearWheelWheelCollider.motorTorque = 0;
+        }
+
+        public void RestartBikePosition()
+        {
+            if (_isRestartBikePosition)
             {
                 var localPosition = CenterObjectMass.localPosition;
                 var tmp_cs26 = localPosition;
@@ -362,28 +392,12 @@ namespace _Game.CodeBase.Player
                 _rigidbody.centerOfMass = new Vector3(localPosition.x, localPosition.y, localPosition.z);
             }
         }
+        public void IsRestartButtonUp() => 
+            _isRestartBikePosition = true;
 
-        private void CrashHappened()
-        {
-            if ((this.transform.localEulerAngles.z >= _crashAngleSideFall01 &&
-                 this.transform.localEulerAngles.z <= _crashAngleSideFall02) && !_linkToStunt.stuntIsOn ||
-                (this.transform.localEulerAngles.x >= _crashAngleFrontFall &&
-                 this.transform.localEulerAngles.x <= _crashAngleBackFall && !_linkToStunt.stuntIsOn))
-            {
-                _rigidbody.drag = 0.1f;
-                _rigidbody.angularDrag = 0.01f;
-                _crashed = true;
-                var tmp_cs27 = CenterObjectMass.localPosition;
-                tmp_cs27.x = 0.0f;
-                tmp_cs27.y = _coMWhenCrahsed;
-                tmp_cs27.z = 0.0f;
-                CenterObjectMass.localPosition = tmp_cs27;
-                _rigidbody.centerOfMass = new Vector3(CenterObjectMass.localPosition.x, CenterObjectMass.localPosition.y, CenterObjectMass.localPosition.z);
-            }
-
-            if (_crashed) _collRearWheelWheelCollider.motorTorque = 0;
-        }
-
+        public void IsRestartButtonDown() => 
+            _isRestartBikePosition = false;
+        
         private void ApplyLocalPositionToVisuals(WheelCollider collider)
         {
             if (collider.transform.childCount == 0)

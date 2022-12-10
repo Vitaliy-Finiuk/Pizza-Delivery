@@ -1,9 +1,9 @@
 using System.Collections.Generic;
 using System.Linq;
-using _Game.CodeBase.FactoryAndStorage.Resources;
+using _Game.CodeBase.ResourcesLogic;
 using UnityEngine;
 
-namespace _Game.CodeBase.FactoryAndStorage.Storage
+namespace _Game.CodeBase.Storage
 {
 	public class Acceptor : MonoBehaviour
 	{

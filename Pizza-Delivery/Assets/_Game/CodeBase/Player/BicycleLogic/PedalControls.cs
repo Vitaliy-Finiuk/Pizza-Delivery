@@ -1,12 +1,14 @@
-using _Game.CodeBase.Input;
+using _Game.CodeBase.Infrastucture;
+using _Game.CodeBase.Services.Input;
 using UnityEngine;
 
-namespace _Game.CodeBase.Player
+namespace _Game.CodeBase.Player.BicycleLogic
 {
     public class PedalControls : MonoBehaviour
     {
-        [SerializeField] private PlayerInput _playerInput;
-        private Bicycle linkToBike;
+        private IInputService _inputService;
+        
+        [SerializeField] private Bicycle _linkToBike;
 
         public GameObject pedalLeft;
         public GameObject pedalRight;
@@ -21,15 +23,14 @@ namespace _Game.CodeBase.Player
 
         private bool _inStunt = false;
 
-        private void Start()
+        private void Awake()
         {
-            linkToBike = GameObject.Find("Player").GetComponent<Bicycle>();
-            _playerInput = GameObject.Find("Player").GetComponent<PlayerInput>();
+            _inputService = Game.InputService;
         }
 
         private void FixedUpdate()
         {
-            if (_playerInput.Vertical > 0)
+            if (_inputService.Axis.y > 0)
             {
                 PedalPart();
             }
@@ -39,9 +40,9 @@ namespace _Game.CodeBase.Player
 
         private void PedalPart()
         {
-            this.transform.rotation *= Quaternion.Euler(linkToBike.BikeSpeed / 4, 0, 0);
-            pedalRight.transform.rotation *= Quaternion.Euler(-linkToBike.BikeSpeed / -4, 0, 0);
-            pedalLeft.transform.rotation *= Quaternion.Euler(-linkToBike.BikeSpeed / 4, 0, 0);
+            this.transform.rotation *= Quaternion.Euler(_linkToBike.BikeSpeed / 4, 0, 0);
+            pedalRight.transform.rotation *= Quaternion.Euler(-_linkToBike.BikeSpeed / -4, 0, 0);
+            pedalLeft.transform.rotation *= Quaternion.Euler(-_linkToBike.BikeSpeed / 4, 0, 0);
             
             if (energy < 10) 
                 energy += 0.01f;
@@ -56,9 +57,9 @@ namespace _Game.CodeBase.Player
             if (energy > 0)
             {
                 var tmpEnergy = 10 - energy;
-                this.transform.rotation *= Quaternion.Euler((linkToBike.BikeSpeed - tmpEnergy) / 4, 0, 0);
-                pedalRight.transform.rotation *= Quaternion.Euler(-(linkToBike.BikeSpeed - tmpEnergy) / -4, 0, 0);
-                pedalLeft.transform.rotation *= Quaternion.Euler(-(linkToBike.BikeSpeed - tmpEnergy) / 4, 0, 0);
+                this.transform.rotation *= Quaternion.Euler((_linkToBike.BikeSpeed - tmpEnergy) / 4, 0, 0);
+                pedalRight.transform.rotation *= Quaternion.Euler(-(_linkToBike.BikeSpeed - tmpEnergy) / -4, 0, 0);
+                pedalLeft.transform.rotation *= Quaternion.Euler(-(_linkToBike.BikeSpeed - tmpEnergy) / 4, 0, 0);
                 energy -= 0.1f;
             }
         }

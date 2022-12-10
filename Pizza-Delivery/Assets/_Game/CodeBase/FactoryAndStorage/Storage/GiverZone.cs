@@ -1,7 +1,7 @@
 using System.Collections.Generic;
 using UnityEngine;
 
-namespace _Game.CodeBase.FactoryAndStorage.Storage
+namespace _Game.CodeBase.Storage
 {
 	public class GiverZone : MonoBehaviour
 	{
