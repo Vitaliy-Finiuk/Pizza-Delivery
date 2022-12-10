@@ -41,8 +41,7 @@ namespace _Game.CodeBase.Player.BicycleLogic
         private int _normalFrontSuspSpring;
         private int _normalRearSuspSpring;
         private bool _forgeBlocked = true;
-
-
+        
         private float _baseDistance;
 
         public AnimationCurve wheelbarRestrictCurve = new AnimationCurve(new Keyframe(0f, 20f),
@@ -66,15 +65,12 @@ namespace _Game.CodeBase.Player.BicycleLogic
 
         private Rigidbody _rigidbody;
 
-
-
         private int _springWeakness = 0;
+        
         public bool _isRestartBikePosition;
 
-        private void Awake()
-        {
+        private void Awake() => 
             _inputService = Game.InputService;
-        }
 
         private void Start()
         {
@@ -393,10 +389,10 @@ namespace _Game.CodeBase.Player.BicycleLogic
             }
         }
         public void IsRestartButtonUp() => 
-            _isRestartBikePosition = true;
+            _isRestartBikePosition = false;
 
         public void IsRestartButtonDown() => 
-            _isRestartBikePosition = false;
+            _isRestartBikePosition = true;
         
         private void ApplyLocalPositionToVisuals(WheelCollider collider)
         {
